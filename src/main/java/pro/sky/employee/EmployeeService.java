@@ -1,14 +1,14 @@
 package pro.sky.employee;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface EmployeeService {
 
-    boolean addEmployee(String lastName, String firstName);
+    Employee addEmployee(String lastName, String firstName) throws EmployeeAlreadyAddedException;
 
-    void deleteEmployee(String firstName, String lastName);
+    Employee deleteEmployee(String firstName, String lastName) throws EmployeeNotFoundException;
 
-    Employee toFindEmployee(String firstName, String lastName);
+    Employee toFindEmployee(String firstName, String lastName) throws EmployeeNotFoundException;
 
-    List<Employee> withdrawalOfEmployees();
+    Collection<Employee> withdrawalOfEmployees();
 }
